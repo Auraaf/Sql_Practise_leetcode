@@ -1,0 +1,5 @@
+from employee e1 ,
+( select max(salary) as msl , departmentid as did 
+ from employee 
+ group by departmentid )  mx_sal , department  de
+ where e1.departmentid = mx_sal.did and e1.salary = mx_sal.msl and mx_sal.did = de.id ;
